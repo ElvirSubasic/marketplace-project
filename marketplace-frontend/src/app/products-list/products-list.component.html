@@ -1,0 +1,56 @@
+<h2>Products List</h2>
+
+<h3>Categories</h3>
+<div class="d-inline-block">
+    <div *ngFor="let category of categories" class="d-inline-block">
+        <button [attr.data-categoryId]="category.categoryId" (click)="handleCategorySelect($event)"
+                class="btn btn-link">{{category.name}}</button>
+    </div>
+</div>
+
+
+<h3>Near Me</h3>
+<div class="form-group">
+    <input class="form-control" [value]="nearMeDistance" type="number" (change)="handleNearMeChange($event)">
+</div>
+
+<h3>Pagination</h3>
+<label>Page Size</label>
+<input class="form-control" [value]="pageSize" type="number" (change)="handlePageSizeChange($event)">
+<button type="button" class="btn btn-primary"
+        style="margin: 15px; width: 150px"
+        (click)="handlePreviousPageClick($event)">Previous Page
+</button>
+<button type="button" class="btn btn-primary"
+        style="margin: 15px; width: 120px"
+        (click)="handleNextPageClick($event)">Next Page
+</button>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Image</th>
+        <th (click)="handleSort($event)" data-name="name">Name</th>
+        <th (click)="handleSort($event)" data-name="description">Description</th>
+        <th>Category Name</th>
+        <th (click)="handleSort($event)" data-name="price">Price</th>
+        <th>Distance</th>
+        <th (click)="handleSort($event)" data-name="views">Views</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+        <td [attr.data-productId]="product.productId" (click)="goToProductsDetailView($event)"><img class="image-size"
+                                                                                                    src="{{product.image}}"/>
+        </td>
+        <td [attr.data-productId]="product.productId" (click)="goToProductsDetailView($event)">{{product.name}}</td>
+        <td [attr.data-productId]="product.productId"
+            (click)="goToProductsDetailView($event)">{{product.description}}</td>
+        <td [attr.data-productId]="product.productId"
+            (click)="goToProductsDetailView($event)">{{product.category?.name}}</td>
+        <td [attr.data-productId]="product.productId" (click)="goToProductsDetailView($event)">{{product.price}}</td>
+        <td [attr.data-productId]="product.productId" (click)="goToProductsDetailView($event)">{{product.distance}}</td>
+        <td [attr.data-productId]="product.productId" (click)="goToProductsDetailView($event)">{{product.views}}</td>
+    </tr>
+    </tbody>
+</table>

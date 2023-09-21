@@ -1,0 +1,143 @@
+<section class="h-100 h-custom" style="background-color: #eee;">
+    <div class="container py-5 h-100" style="margin-bottom: 5%">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-11 col-xl-10">
+                <div class="card border-top border-bottom border-3" style="border-color: blue !important;">
+                    <div *ngIf="showViewForm">
+                        <div class="card-body p-5">
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <p class="lead fw-bold mb-5">Detail Page</p>
+                                </div>
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Image</p>
+                                    <img class="image-size" src="{{product?.image}}"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Name</p>
+                                    <p>{{product?.name}}</p>
+                                </div>
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Price</p>
+                                    <p>{{product?.price}}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="small text-muted mb-1">Description</p>
+                                <p>{{product?.description}}</p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Category</p>
+                                    <p>{{product?.category?.name}}</p>
+                                </div>
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Views</p>
+                                    <p>{{product?.views}}</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Latitude</p>
+                                    <p>{{product?.latitude}}</p>
+                                </div>
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Longitude</p>
+                                    <p>{{product?.longitude}}</p>
+                                </div>
+                            </div>
+
+                            <p class="small text-muted mb-1">Price Histories</p>
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Price</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let priceHistory of product?.priceHistories">
+                                    <td>{{priceHistory.price}}</td>
+                                    <td>{{priceHistory.timestamp}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showEditForm" style="margin: 50px">
+                        <div class="card-body p-5">
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <p class="lead fw-bold mb-5">Detail Page</p>
+                                </div>
+                                <div class="col mb-3">
+                                    <p class="small text-muted mb-1">Image</p>
+                                    <input type="file" (change)="handleUpload($event)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p class="small text-muted mb-1">Name</p>
+                                <input type="text" name="name" (change)="handleChange($event)"
+                                       [value]="temporaryProduct?.name">
+                            </div>
+                            <div class="col mb-3">
+                                <p class="small text-muted mb-1">Price</p>
+                                <input type="number" name="price" (change)="handleChange($event)"
+                                       [value]="temporaryProduct?.price">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p class="small text-muted mb-1">Category Id</p>
+                                <input type="text" name="categoryId" (change)="handleChange($event)"
+                                       [value]="temporaryProduct?.category?.categoryId">
+                            </div>
+                            <div class="col mb-3">
+                                <p class="small text-muted mb-1">Description</p>
+                                <input type="text" name="description" (change)="handleChange($event)"
+                                       [value]="temporaryProduct?.description">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p class="small text-muted mb-1">Latitude</p>
+                                <input type="number" name="latitude" (change)="handleChange($event)"
+                                       [value]="temporaryProduct?.latitude">
+                            </div>
+                            <div class="col mb-3">
+                                <p class="small text-muted mb-1">Longitude</p>
+                                <input type="number" name="longitude" (change)="handleChange($event)"
+                                       [value]="temporaryProduct?.longitude">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: inline-block">
+                        <button *ngIf="showEditButton" type="button" class="btn btn-primary"
+                                style="margin: 15px; width: 120px"
+                                (click)="handleEditClick($event)">Edit
+                        </button>
+                        <button *ngIf="showCancelButton" type="button" class="btn btn-primary"
+                                style="margin: 15px; width: 120px"
+                                (click)="handleCancelClick($event)">Cancel
+                        </button>
+                        <button *ngIf="showSaveButton" type="button" class="btn btn-primary"
+                                style="margin: 15px; width: 120px"
+                                (click)="handleSaveClick($event)">Save
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

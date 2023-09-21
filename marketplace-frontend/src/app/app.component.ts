@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'marketplace-frontend';
+  title = 'Marketplace';
+  productListNavItem = "Product List";
+  createProductNavItem= "Add Product"
+  authorRights = "All Rights Reserved 2023 @ElvirSubasic";
 }
