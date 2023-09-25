@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "aeb6aebc-23e2-4012-8d3d-12804bf56f75",
+		"name": "Marketplace-Java Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28958871"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Categories Sort",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/categories/sort-pagination?field=name&direction=DESC&offset=0&pageSize=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"sort-pagination"
+							],
+							"query": [
+								{
+									"key": "field",
+									"value": "name"
+								},
+								{
+									"key": "direction",
+									"value": "DESC"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Category\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Category Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Category Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"41"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Products Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"API Car\",\r\n    \"description\": \"Created from API\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"API Car\",\r\n    \"description\": \"Created from API\",\r\n    \"price\": 10000,\r\n    \"latitude\": 44.5351142,\r\n    \"longitude\": 18.6510616,\r\n    \"image\": \"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\",\r\n    \"category\" : {\r\n        \"categoryId\": 5\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product/1158",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"1158"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product View By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"API Car\",\r\n    \"description\": \"Created from API\",\r\n    \"price\": 10000,\r\n    \"latitude\": 44.5351142,\r\n    \"longitude\": 18.6510616,\r\n    \"image\": \"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\",\r\n    \"category\" : {\r\n        \"categoryId\": 5\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product/view/1158",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"view",
+								"1158"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"API Car\",\r\n    \"description\": \"Created from API\",\r\n    \"price\": 10000,\r\n    \"latitude\": 44.5351142,\r\n    \"longitude\": 18.6510616,\r\n    \"image\": \"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\",\r\n    \"category\" : {\r\n        \"categoryId\": 5\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product/1158",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"1158"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PriceHistory",
+			"item": [
+				{
+					"name": "All Price Histories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/priceHistories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"priceHistories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product History By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/priceHistory/1112",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"priceHistory",
+								"1112"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Price History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 2002.2,\r\n    \"timestamp\": \"2023-09-01T13:56:57.000+00:00\",\r\n    \"product\": {\r\n        \"productId\" : 1\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/priceHistory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"priceHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Price History By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 2012.2,\r\n    \"timestamp\": \"2023-09-01T13:56:57.000+00:00\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/priceHistory/1114",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"priceHistory",
+								"1114"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 2012.2,\r\n    \"timestamp\": \"2023-09-01T13:56:57.000+00:00\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/priceHistory/1114",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"priceHistory",
+								"1114"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
